@@ -36,7 +36,10 @@ QUIT:   .byte $04       ; param_count
 
 PLAY:
 ; loop here as long as bits are [F]alse (aka 0)
-F_NX:   jsr DELAY       ; 6 (+13)                  19
+F_NX:   nop             ; 2                         2
+        nop             ; 2                         2
+        nop             ; 2                         2
+        bit $00         ; 3                         3
 F_RD:   lda ($FE),y     ; 5                         5               5
         asl             ; 2                         2               2
         bcs T_1_SW      ; 2/3           2
@@ -95,11 +98,11 @@ F_6:    jsr DELAY       ; 6 (+13)
 
 F_7:    jsr DELAY       ; 6 (+13)
         asl             ; 2
-        bcs T_8_SW      ; 2/3                                       2
-        nop             ; 2                                         2
-        nop             ; 2                                         2
-        nop             ; 2                                         2
-        nop             ; 2                                         2
+        bcs T_8_SW      ; 2/3                       2               2
+        nop             ; 2                         2               2
+        nop             ; 2                         2               2
+        nop             ; 2                         2               2
+        nop             ; 2                         2               2
 
 F_8:    iny             ; 2                         2               2
         bne F_NX        ; 2/3                       3 = 31          2
@@ -190,7 +193,10 @@ F_8_SW: sta $C030       ; 4
 
 
 ; loop here as long as bits are [T]rue (aka 1)
-T_NX:   jsr DELAY       ; 6 (+13)
+T_NX:   nop             ; 2
+        nop             ; 2
+        nop             ; 2
+        bit $00         ; 3
 T_RD:   lda ($FE),y     ; 5
         asl             ; 2
         bcc F_1_SW      ; 2/3
