@@ -27,7 +27,7 @@ To play .btc files in your own Apple II program:
 
 * Place the [BTc player core](https://github.com/oliverschmidt/Play-BTc/blob/master/play-btc.s#L31-L277) in the Apple II memory. The player core source code deliberately doesn't make use of any advanced assembler features and should therefore assemble with any assembler (maybe with trivial adjustments).
 
-* Replace the [visual feedback](https://github.com/oliverschmidt/Play-BTc/blob/master/play-btc.s#L275) with two _nop_ operations.
+* Replace the [visual feedback](https://github.com/oliverschmidt/Play-BTc/blob/master/play-btc.s#L275) with two `nop` operations.
 
 * Call the BTc player core with
   * A set to the high byte of the memory address you placed the .btc file content on
