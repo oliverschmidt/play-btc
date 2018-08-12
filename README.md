@@ -30,5 +30,5 @@ To play .btc files in your own Apple II program:
 * Replace the [visual feedback](https://github.com/oliverschmidt/Play-BTc/blob/master/play-btc.s#L275) with two `nop` operations.
 
 * Call the BTc player core with
-  * A set to the high byte of the memory address you placed the .btc file content on
-  * X set to the number of samples divided by 256
+  * `A` set to the high byte of the memory address you placed the .btc file content on
+  * `X` set to the number of samples divided by 256
