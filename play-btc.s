@@ -9,13 +9,8 @@
 
         jsr $FC58
 
-        lda #<__DATA_LOAD__
-        ldx #>__DATA_LOAD__
-        sta $FE
-        stx $FE+1
-
+        lda #>__DATA_LOAD__
         ldx #>__DATA_SIZE__
-        ldy #$00
         jsr PLAY
 
         lda $C010
@@ -33,8 +28,16 @@ QUIT:   .byte $04       ; param_count
         .byte $00       ; reserved
         .word $0000     ; reserved
 
+; player core
+; parameters:
+;   A - first page to play
+;   X - pages to play
+; uses:
+;   $FE,$FF
+PLAY:   ldy #$00
+        sty $FE
+        sta $FE+1
 
-PLAY:
 ; loop here as long as bits are [F]alse (aka 0)
 F_NX:   nop             ; 2                         2
         nop             ; 2                         2
