@@ -9,7 +9,7 @@ Play-BTc plays .btc files created by the BTc Sound Encoder on the Apple II. Howe
 * The number of __Samples__ mustn't exeed __362500__ (use _Trim .WAV_ if necessary).
 
 To built Play-BTc:
-* Get [cc65](http://cc65.github.io/cc65/)
+* Get [cc65](https://cc65.github.io/)
 * Enter `cl65 -C play-btc.cfg play-btc.s`
 
 To run Play-BTc:
